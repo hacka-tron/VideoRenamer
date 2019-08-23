@@ -12,7 +12,7 @@ This tool has two major usages:
 
 1. Rename Entire Season
 
-2. Rename individual season
+2. Rename Individual season
 
 Entire Season
 ---
