@@ -28,7 +28,7 @@ class EpisodeFormatter:
             elif fExt not in supportedTypes:
                 continue
             ext = fExt
-            newName = self.showName + " - " + str(self.getEpisode(fName)) + fExt
+            newName = self.showName + " - E" + str(self.getEpisode(fName)) + fExt
             os.rename(f, newName)
         """
         trackerEp = None
