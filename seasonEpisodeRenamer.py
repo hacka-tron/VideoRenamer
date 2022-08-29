@@ -30,7 +30,7 @@ ttk.Radiobutton(mainframe,
 
 ttk.Label(mainframe, text = "Location: ").grid(row = 1, column = 0, sticky = (N, W), ipadx = 10)
 
-#This section is for selection your file
+# This section is for selection your file
 def browseButton():
     # Allow user to select a directory and store it in global var
     # called folder_path
@@ -45,25 +45,19 @@ locationLabel.grid(row=1, column=1, sticky = (W))
 browseButton = ttk.Button(mainframe,text="Browse", command=browseButton)
 browseButton.grid(row=1, column=2)
 
-#This section is for choosing the name of the show
-showName = StringVar()
-showNameLabel = ttk.Label(mainframe, text = "Show Name: ").grid(row = 3, column = 0, sticky = (N, W), ipadx = 10)
-showNameEntry = ttk.Entry(mainframe, textvariable= showName).grid(row = 3, column= 1, columnspan= 2, sticky = (N, W), ipadx = 10)
-
-#Closes the window and performs the renaming with the options selected
-#This section is for selection your file
+# Closes the window and performs the renaming with the options selected
+# This section is for selection your file
 def close(event = None):
     optionType = renameType.get()
     path = folderPath.get()
-    name = showName.get()
-    if not (optionType and path and name):
+    if not (optionType and path):
         messagebox.showerror("Incomplete", "Please fill out all the options")
         return
     if optionType =="Season":
-        seasonFormatter = SeasonFormatter(path, name)
+        seasonFormatter = SeasonFormatter(path)
         seasonFormatter.renameSeasons()
     elif optionType == "Episode":
-        episodeFormatter = EpisodeFormatter(path, name)
+        episodeFormatter = EpisodeFormatter(path)
         episodeFormatter.renameEpisodes()
     root.destroy()
 
