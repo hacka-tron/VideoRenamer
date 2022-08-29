@@ -1,4 +1,4 @@
-# VideoRenamer
+# SeasonEpisodeRenamer
 
 SeasonEpisodeRenamer is a tool to help rename show series with just 1 click.
 
