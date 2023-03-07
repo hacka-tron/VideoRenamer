@@ -1,6 +1,6 @@
 import os
 import re
-supportedTypes = ['.mkv', '.mp4']
+supportedTypes = ['.mkv', '.mp4', '.avi']
 
 
 class EpisodeFormatter:
@@ -18,6 +18,7 @@ class EpisodeFormatter:
         for f in os.listdir():
             fName, fExt = os.path.splitext(f)
             if fExt not in supportedTypes:
+                print(f'{fName}{fExt} is not a supported video file type!')
                 continue
             newName = f'Episode {str(self.getEpisode(fName)) + fExt}'
             os.rename(f, newName)
